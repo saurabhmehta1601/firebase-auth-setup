@@ -1,5 +1,5 @@
-import {auth} from "../lib/firebase"
+import {firebase} from "../lib/firebase"
 
 export const logout =() =>{
-    auth.signOut().then(() =>console.log("signed out successfully "))
+    firebase.auth().signOut().then(() =>console.log("signed out successfully ")).catch(err=> console.log(`can't logout user `,err))
 }

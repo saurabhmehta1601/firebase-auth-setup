@@ -1,8 +1,8 @@
-import { auth } from "../lib/firebase";
+import { firebase } from "../lib/firebase";
 
   function SignUpUser (email, password) {
   let userInfo=''
-  auth
+  firebase.auth()
     .createUserWithEmailAndPassword(email, password)
     .then((userCredential) => {
       console.log('user credentials are ',userCredential);
