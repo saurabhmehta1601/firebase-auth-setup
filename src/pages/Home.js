@@ -2,26 +2,11 @@ import React, { useEffect, useState } from "react";
 import { logout } from "../services/logout";
 import {firebase} from '../lib/firebase'
 import { Link } from "react-router-dom";
+import {useAuthUser} from '../hooks/useAuthUser'
 
 const Home = () => {
 
-  const [activeUser,setActiveUser] = useState() ; 
-
-  useEffect(()=>{
-    const setUser=  ()=>{
-
-      firebase.auth().onAuthStateChanged(user =>{
-        if(user){
-          setActiveUser(user)
-        }else{
-          setActiveUser(null)
-        }
-      })
-    }
-    setUser()
-  },[activeUser])
-
-  console.log('current user is ',firebase.auth().currentUser)
+const activeUser = useAuthUser();
 
   console.log(activeUser)
 
