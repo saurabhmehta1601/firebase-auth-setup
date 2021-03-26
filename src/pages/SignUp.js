@@ -1,13 +1,17 @@
 import React, {   useState } from 'react'
 import { SignUpUser } from '../services/signup'
+import {useHistory} from 'react-router-dom'
 
 const SignUp = () => {
     const [email,setEmail] = useState('')
     const  [password,setPassword] = useState('')
 
+    const history = useHistory()
+
     const handleSubmit =  (e)=>{
         e.preventDefault()
         SignUpUser(email,password)
+        history.push('/')
     }
 
     return (

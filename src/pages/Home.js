@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { logout } from "../services/logout";
 import {firebase} from '../lib/firebase'
+import { Link } from "react-router-dom";
 
 const Home = () => {
 
@@ -27,9 +28,13 @@ const Home = () => {
   return (
     <div >
       {!activeUser && <>
-      <button>Log In</button>
+      <button>
+        <Link to="/login">
+        Log In
+        </Link>
+        </button>
       <button className="button-primary" type="button" value="button input">
-        Sign up
+        <Link to='/signup'> Sign up </Link>
       </button>
       </>}
         
