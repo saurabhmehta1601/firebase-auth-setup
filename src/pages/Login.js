@@ -1,17 +1,18 @@
 import React from 'react'
 
 const Login = () => {
+
     return (
-        <div className="container">
-      <div class="four columns">
-      <label for="exampleEmailInput">Your email</label>
-      <input class="u-full-width" type="email" placeholder="Enter email" id="exampleEmailInput" />
+        <div classNameNameName="container">
+      <div classNameName="four columns">
+      <label for="email">Your email</label>
+      <input classNameName="u-full-width" type="email" placeholder="Enter email" id="email" />
         </div>
-        <div class="four columns">
-      <label for="exampleEmailInput">Your email</label>
-      <input class="u-full-width" type="email" placeholder="Enter password" id="exampleEmailInput" />
+        <div classNameName="four columns">
+      <label for="password">Your email</label>
+      <input classNameName="u-full-width" type="email" placeholder="Enter password" id="password" />
         </div>
-        <button className="six columns mt-4 button-primary">Login</button>
+        <button classNameNameName="six columns mt-4 button-primary">Login</button>
         </div>
     )
 }

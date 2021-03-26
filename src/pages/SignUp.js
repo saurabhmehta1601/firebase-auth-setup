@@ -1,19 +1,30 @@
-import React from 'react'
+import React, {   useState } from 'react'
+import { SignUpUser } from '../services/signup'
 
-const Login = () => {
+const SignUp = () => {
+    const [email,setEmail] = useState('')
+    const  [password,setPassword] = useState('')
+
+    const handleSubmit =  (e)=>{
+        e.preventDefault()
+        console.log("form submitted with","email as ",email,"password as ",password)
+         SignUpUser(email,password)
+    }
+
     return (
         <div className="container">
       <div class="four columns">
-      <label for="exampleEmailInput">Your email</label>
-      <input class="u-full-width" type="email" placeholder="Enter email" id="exampleEmailInput" />
+      <label for="email">Your email</label>
+      <input class="u-full-width" type="email" placeholder="Enter email" id="email" onChange={ (e) =>setEmail(e.target.value)} />
         </div>
         <div class="four columns">
-      <label for="exampleEmailInput">Your email</label>
-      <input class="u-full-width" type="email" placeholder="Enter password" id="exampleEmailInput" />
+      <label for="password">Your password</label>
+      <input class="u-full-width" type="email" placeholder="Enter password" id="password" onChange={ (e) =>setPassword(e.target.value)} />
         </div>
-        <button className="six columns mt-4 button-primary">Sign Up</button>
+
+        <button type="submit" className="six columns mt-4 button-primary" onClick={handleSubmit}>Sign Up</button>
         </div>
     )
 }
 
-export default Login
+export default SignUp
