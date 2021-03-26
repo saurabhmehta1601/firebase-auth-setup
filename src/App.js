@@ -1,10 +1,18 @@
-import {firebase} from './lib/firebase'
+import { lazy, Suspense } from "react";
+import {Switch,Route} from 'react-router-dom'
+
+const Home = lazy(() => import ('./pages/Home') )
 
 function App() {
-  console.log('firebase file is ',firebase);
-  return <div>
+  return (
+    <Suspense fallback={<div> Loading... </div>} >
+    <Switch>
+      <Route>
 
-  </div>;
+      </Route>
+    </Switch>
+    </Suspense>
+  );
 }
 
 export default App;
